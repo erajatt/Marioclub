@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/styles.css">
+
+  <title>Marioclub</title>
+</head>
+
+<body>
+  <header>
+    <h1>Marioclub</h1>
+  </header>
+  <section class="banner">
+    <img id="welcomeImage" src="/img/image1.png" alt="marioclub welcome banner">
+
+    <div id="element" class="welcome">
+      <h2>Welcome to <br><span>Marioclub</span></h2>
+    </div>
+  </section>
+  <nav class="main-nav">
+    <ul>
+      <li><button id="scrollbutton">Join the club</button></li>
+      <li><a href="https://mario.nintendo.com/news/">Latest news</a></li>
+      <li><a href="https://www.nintendo.com/store/games/mario-games/">New games</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+    </ul>
+  </nav>
+  <main>
+    <article>
+      <h2>It's a me, Mario</h2>
+      <p><span>Welcome to the exhilarating world of the Mario Club!</span><br> Join a vibrant community of gamers,
+        united by their love
+        for the iconic plumber and his thrilling adventures. Immerse yourself in a realm where friendships are forged,
+        high scores are shattered, and nostalgia takes center stage. Engage in lively discussions, share strategies, and
+        participate in friendly competitions as you celebrate the legacy of Mario. From classic titles to the latest
+        releases, the Mario Club is a haven for gamers of all ages. Get ready to embark on a journey filled with endless
+        excitement, unforgettable moments, and the joy of being part of a passionate community. Welcome to the Mario
+        Club, where dreams are realized and adventures await around every pixelated corner. Choose your favorite
+        character below and get merged with players of similar choices.</p>
+    </article>
+    <h2>Our characters, who is your fav one?</h2>
+    <ul class="images">
+      <li><img src="img\Mario-NSMBU.png" alt="mario thumbnail 1">
+        <div class="caption">Mario</div>
+      </li>
+      <li><img src="img\Luigi2.png" alt="mario thumbnail 2">
+        <div class="caption">Luigi</div>
+      </li>
+      <li><img src="img\Yoshi2.png" alt="mario thumbnail 4">
+        <div class="caption">Yoshi</div>
+      </li>
+      <li><img src="img\PrincessPeach-SuperMario3DLand.png" alt="mario thumbnail 3">
+        <div class="caption">Princess Peach</div>
+      </li>
+      <li><img src="img\Toad_3D_Land.png" alt="mario thumbnail 5">
+        <div class="caption">Toad</div>
+      </li>
+      <li><img src="img\PrincessRosalina.png" alt="mario thumbnail 6">
+        <div class="caption">Princess Rosalina</div>
+      </li>
+    </ul>
+  </main>
+  <section class="join">
+    <h2>Join Today!</h2>
+    <p>Fight Mario! Breathe Mario! Live Mario!</p>
+    <section id="form-section">
+      <form>
+        <input id="form-section" type="email" name="email" placeholder="Type email & hit enter" required>
+      </form>
+    </section>
+  </section>
+  <footer>
+    <p class="copyright">Copyright 2023 Marioclub</p>
+  </footer>
+  <script>
+    var imageSources = ["img/image2.jpg", "img/image3.jpg", "img/image4.jpg", "/img/image1.png"]; // Array of image sources
+    var welcomeImage = document.getElementById("welcomeImage");
+    var currentIndex = 0;
+    setInterval(function() {
+      
+      welcomeImage.src = imageSources[currentIndex];
+      currentIndex = (currentIndex + 1) % imageSources.length;
+    },4000);
+
+
+
+    var element = document.getElementById('element');
+    var styles = ['style4','style1', 'style2', 'style3'];
+    var Index = 0;
+
+    setInterval(function () {
+
+      var currentClass = styles[Index];
+      element.classList.remove(currentClass);
+      
+      currentClass = styles[++Index];
+      
+      element.classList.add(currentClass);
+      Index = (Index) % styles.length;
+    }, 4000);
+
+
+
+
+    const scrollButton = document.getElementById("scrollbutton");
+    const formSection = document.getElementById("form-section");
+
+    scrollButton.addEventListener("click", function () {
+      formSection.scrollIntoView({ behavior: "smooth" });
+    });
+    
+
+  </script>
+</body>
+
+</html>
